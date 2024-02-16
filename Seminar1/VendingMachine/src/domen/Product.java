@@ -6,6 +6,7 @@ public class Product {
     private int place;
     private String name;
     private long id;
+    
 
  // Конструкторы
 
@@ -67,10 +68,11 @@ public class Product {
 
     @Override
     public String toString(){
-        return "\nPrice = " + this.price+"\n"+
+        return "Price = " + this.price+"\n"+
                 "Place = " + this.place+"\n"+
                 "Name = " + this.name+"\n"+
                 "ID = " + this.id+"\n";
+                
     }
    
 }
