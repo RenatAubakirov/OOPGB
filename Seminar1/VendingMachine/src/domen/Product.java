@@ -68,7 +68,7 @@ public class Product {
 
     @Override
     public String toString(){
-        return "Price = " + this.price+"\n"+
+        return "\nPrice = " + this.price+"\n"+
                 "Place = " + this.place+"\n"+
                 "Name = " + this.name+"\n"+
                 "ID = " + this.id+"\n";
