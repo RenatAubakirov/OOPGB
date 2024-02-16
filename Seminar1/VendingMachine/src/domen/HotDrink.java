@@ -23,7 +23,7 @@ public class HotDrink extends Product {
 
     @Override
     public String toString() {
-        return super.toString() + "temp="+tempHotDrink ;
+        return super.toString() + "temp=" +tempHotDrink ;
     }
 
 }
