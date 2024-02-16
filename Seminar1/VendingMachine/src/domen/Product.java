@@ -1,44 +1,76 @@
-package domen;
+package Domen;
 
 public class Product {
-	private long id;
-	private String name;
-	private double price;
-	private int place;
-	public Product(long id, String name, double price, int place) {
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.place = place;
-	}
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
-	public int getPlace() {
-		return place;
-	}
-	public void setPlace(int place) {
-		this.place = place;
-	}
-	@Override
-	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", place=" + place + "]";
-	}
-	
-	
+    // Поля
+    private int price;
+    private int place;
+    private String name;
+    private long id;
+
+ // Конструкторы
+
+    public Product(){
+        this.price = -1;
+        this.place = -1;
+        this.name = "Неизвестно";
+        this.id = -1;
+    }
+    public Product(int price){
+        this();
+        this.price = price;
+    }
+
+    public Product(int price, int place){
+        this(price);
+        this.place = place;
+    }
+
+    public Product(int price, int place, String name){
+        this(price, place);
+        this.name = name;
+    }
+
+    public Product(int price, int place, String name, long id){
+        this(price, place, name);
+        this.id = id;
+    }
+
+
+    public int getPrice() {
+        return price;
+    }
+
+    // Свойства
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getPlace() {
+        return place;
+    }
+
+    public void setPlace(int place) {
+        this.place = place;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public String toString(){
+        return "\nPrice = " + this.price+"\n"+
+                "Place = " + this.place+"\n"+
+                "Name = " + this.name+"\n"+
+                "ID = " + this.id+"\n";
+    }
+   
 }
