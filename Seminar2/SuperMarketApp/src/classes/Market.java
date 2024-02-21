@@ -6,8 +6,9 @@ import java.util.List;
 import interfaces.iActorBehaviour;
 import interfaces.iMarketBehaviour;
 import interfaces.iQueueBehaviour;
+import interfaces.iReturnOrder; // Импортируем интерфейс iReturnOrder
 
-public class Market implements iMarketBehaviour, iQueueBehaviour {
+public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
     private List<iActorBehaviour> queue;
 
     public Market() {
@@ -34,6 +35,7 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         }
 
     }
+
 
     @Override
     public void update() {
@@ -73,5 +75,23 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
 
             }
         }
+    }
+
+    @Override
+    public void initiateReturn() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'initiateReturn'");
+    }
+
+    @Override
+    public void processReturn() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'processReturn'");
+    }
+
+    @Override
+    public void cancelReturn() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'cancelReturn'");
     }
 }

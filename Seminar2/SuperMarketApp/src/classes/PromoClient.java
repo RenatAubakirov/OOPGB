@@ -12,9 +12,9 @@ public class PromoClient extends Actor {
     /**
      * Конструктор класса PromoClient.
      *
-     * @param name            Имя акционного клиента.
-     * @param idPromo         Идентификатор акции.
-     * @param promoName       Название акции.
+     * @param name Имя акционного клиента.
+     * @param idPromo Идентификатор акции.
+     * @param promoName Название акции.
      * @param participantsCount Количество участников акции.
      */
     public PromoClient(String name, int idPromo, String promoName, int participantsCount) {

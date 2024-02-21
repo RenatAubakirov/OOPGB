@@ -8,5 +8,6 @@ public interface iActorBehaviour {
     public void setTakeOrder(boolean isCreated);
     public void setMakeOrder(boolean isCreated);
     public Actor getActor();
+    public boolean canReturn();
 }
 
