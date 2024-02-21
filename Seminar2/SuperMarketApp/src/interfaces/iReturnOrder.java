@@ -1,7 +1,7 @@
 package interfaces;
 
 public interface iReturnOrder {
-    public void initiateReturn();
-    public void processReturn();
-    public void cancelReturn();
+    public void initiateReturn(iActorBehaviour actor);
+    public void processReturn(iActorBehaviour actor);
+
 }

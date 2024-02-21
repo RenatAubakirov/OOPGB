@@ -37,4 +37,10 @@ public class SpecialClient extends Actor {
     void setName(String name) {
         super.name = name;
     }
+
+    @Override
+    public boolean canReturn() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'canReturn'");
+    }
 }

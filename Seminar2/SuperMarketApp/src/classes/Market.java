@@ -6,13 +6,13 @@ import java.util.List;
 import interfaces.iActorBehaviour;
 import interfaces.iMarketBehaviour;
 import interfaces.iQueueBehaviour;
-import interfaces.iReturnOrder; // Импортируем интерфейс iReturnOrder
+import interfaces.iReturnOrder;
 
 public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
     private List<iActorBehaviour> queue;
 
     public Market() {
-        this.queue = new ArrayList<iActorBehaviour>();
+        this.queue = new ArrayList<>();
     }
 
     @Override
@@ -33,15 +33,17 @@ public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
             System.out.println(actor.getActor().getName() + " клиент ушел из магазина ");
             queue.remove(actor);
         }
-
     }
-
 
     @Override
     public void update() {
         takeOrder();
         giveOrder();
         releaseFromQueue();
+        for (iActorBehaviour actor : queue) {
+            initiateReturn(actor);
+            processReturn(actor);
+        }
     }
 
     @Override
@@ -72,26 +74,23 @@ public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
             if (!actor.isMakeOrder()) {
                 actor.setMakeOrder(true);
                 System.out.println(actor.getActor().getName() + " клиент сделал заказ ");
-
             }
         }
     }
 
     @Override
-    public void initiateReturn() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'initiateReturn'");
+    public void initiateReturn(iActorBehaviour actor) {
+        // Реализация инициирования возврата товара
+        if (queue.contains(actor)) {
+            System.out.println(actor.getActor().getName() + " клиент инициировал возврат товара ");
+        }
     }
 
     @Override
-    public void processReturn() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'processReturn'");
-    }
-
-    @Override
-    public void cancelReturn() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cancelReturn'");
+    public void processReturn(iActorBehaviour actor) {
+        // Реализация обработки возврата товара
+        if (queue.contains(actor)) {
+            System.out.println(actor.getActor().getName() + " клиент вернул товар ");
+        }
     }
 }

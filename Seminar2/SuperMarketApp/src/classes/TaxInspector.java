@@ -31,4 +31,11 @@ public class TaxInspector implements iActorBehaviour{
     public void setTakeOrder(boolean isCreated) {
         isTakeOrder = isCreated;
     }
+
+    @Override
+    public boolean canReturn() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'canReturn'");
+    }
+
 }
