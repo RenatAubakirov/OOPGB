@@ -2,9 +2,9 @@ package classes;
 
 public class EventClient extends BaseClient {
     private int idClient;
-    private static int amountEventCount = 10;
+    private static int minId;
+    private static int maxId;
     private static String eventName;
-
 
     public EventClient(String name, int idClient) {
         super(name);
@@ -12,19 +12,29 @@ public class EventClient extends BaseClient {
     }
 
     /**
-     * @apiNote Узнать какое количество клиентов максимально в акции
-     * @return кол-во клиентов
+     * @apiNote Узнать минимальный диапазон id клиентов в акции
+     * @return минимальный id клиентов
      */
-    public static int getAmountEventCount() {
-        return amountEventCount;
+    public static int getMinId() {
+        return minId;
     }
 
     /**
-     * @apiNote Задать максимальное количество клиентов в акции
-     * @param amountEventCount максимальное кол-во
+     * @apiNote Узнать максимальный диапазон id клиентов в акции
+     * @return максимальный id клиентов
      */
-    public static void setAmountEventCount(int amountEventCount) {
-        EventClient.amountEventCount = amountEventCount;
+    public static int getMaxId() {
+        return maxId;
+    }
+
+    /**
+     * @apiNote Задать диапазон id клиентов в акции
+     * @param min минимальный id
+     * @param max максимальный id
+     */
+    public static void setIdRange(int min, int max) {
+        minId = min;
+        maxId = max;
     }
 
     /**
@@ -48,7 +58,7 @@ public class EventClient extends BaseClient {
      * @return true | false
      */
     public boolean isClientCurrentEvent() {
-        return this.idClient <= amountEventCount;
+        return this.idClient >= minId && this.idClient <= maxId;
     }
 
     @Override
@@ -57,4 +67,3 @@ public class EventClient extends BaseClient {
                 " name=" + super.name + "]";
     }
 }
-

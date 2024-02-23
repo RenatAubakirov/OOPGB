@@ -15,11 +15,11 @@ public class Main {
         TaxInspector client4 = new TaxInspector();
 
         EventClient.setEventName("First event");
-        EventClient.setAmountEventCount(3);
-        EventClient client5 = new EventClient("Вера",1);
-        EventClient client6 = new EventClient("Саша",2);
-        EventClient client7 = new EventClient("Дима",3);
-        EventClient client8 = new EventClient("Рома",4);
+        EventClient.setIdRange(1, 2); // Установка диапазона id клиентов в акции
+        EventClient client5 = new EventClient("Вера", 1);
+        EventClient client6 = new EventClient("Саша", 2);
+        EventClient client7 = new EventClient("Дима", 3);
+        EventClient client8 = new EventClient("Рома", 4);
         System.out.println("Действующая акция " + EventClient.getEventName());
         checkEventForClient(client5);
         checkEventForClient(client6);
