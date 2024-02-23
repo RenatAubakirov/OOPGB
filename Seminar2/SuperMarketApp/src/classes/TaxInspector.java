@@ -37,4 +37,10 @@ public class TaxInspector implements iActorBehaviour, iReturnOrder {
     public void returnOrder() {
         System.out.println(getActor().getName() + " производит возврат заказа");
     }
+
+    @Override
+    public String getName() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getName'");
+    }
 }

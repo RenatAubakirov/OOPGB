@@ -20,7 +20,7 @@ public abstract class Actor implements iActorBehaviour, iReturnOrder {
      * @apiNote Возвращает имя клиента
      * @return имя клиента
      */
-    abstract String getName();
+    public abstract String getName();
 
     /**
      * @apiNote Задаёт имя клиента
