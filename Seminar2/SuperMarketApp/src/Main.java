@@ -45,7 +45,7 @@ public class Main {
         if (client.isClientCurrentEvent()) {
             System.out.println(client + " является клиентом акции");
         } else {
-            System.out.println(client + " НЕ является клиентом акции");
+            System.out.println(client + " Не является клиентом акции");
         }
     }
 }
