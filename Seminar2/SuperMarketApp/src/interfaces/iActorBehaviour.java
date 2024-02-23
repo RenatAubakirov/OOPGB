@@ -32,4 +32,6 @@ public interface iActorBehaviour {
      * @return объект клиента
      */
     public Actor getActor();
+
+	public String getName();
 }

@@ -27,13 +27,12 @@ public class BaseClient extends Actor {
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return super.name;
     }
 
     @Override
-    void setName(String name) {
+    public void setName(String name) {
         super.name = name;
     }
 }
-
