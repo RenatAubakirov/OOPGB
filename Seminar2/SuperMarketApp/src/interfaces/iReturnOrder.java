@@ -1,7 +1,9 @@
 package interfaces;
 
 public interface iReturnOrder {
-    public void initiateReturn(iActorBehaviour actor);
-    public void processReturn(iActorBehaviour actor);
-
+    /**
+     * @apiNote Возможность клиента вернуть товар
+     */
+    public void returnOrder();
 }
+

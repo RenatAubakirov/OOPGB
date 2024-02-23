@@ -1,8 +1,9 @@
 package classes;
 
 import interfaces.iActorBehaviour;
+import interfaces.iReturnOrder;
 
-public class TaxInspector implements iActorBehaviour{
+public class TaxInspector implements iActorBehaviour, iReturnOrder {
     private String name;
     private boolean isTakeOrder;
     private boolean isMakeOrder;
@@ -24,18 +25,16 @@ public class TaxInspector implements iActorBehaviour{
         return isTakeOrder;
     }
 
-    public void setMakeOrder(boolean isCreated) {
-        isMakeOrder = isCreated;
+    public void setMakeOrder(boolean trueOrFalse) {
+        isMakeOrder = trueOrFalse;
     }
 
-    public void setTakeOrder(boolean isCreated) {
-        isTakeOrder = isCreated;
+    public void setTakeOrder(boolean trueOrFalse) {
+        isTakeOrder = trueOrFalse;
     }
 
     @Override
-    public boolean canReturn() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'canReturn'");
+    public void returnOrder() {
+        System.out.println(getActor().getName() + " производит возврат заказа");
     }
-
 }
