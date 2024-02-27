@@ -1,9 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import controllers.AccountController;
+import domain.Employee;
 import domain.Student;
 import domain.StudentGroup;
 import domain.StudentSteam;
+import domain.Teacher;
+import services.TeacherService;
 
 
 public class App {
@@ -83,5 +87,37 @@ public class App {
         for (StudentGroup studentGroup : studentSteam1) {
             System.out.println(studentGroup);
         }
+                System.out.println("----Lesson4----");
+        Employee worker1 = new Employee("Vasiliy", 55, "worker");
+        Employee worker2 = new Employee("Andrey", 40, "worker");
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(worker1);
+        employeeList.add(worker2);
+        Teacher teacher1 = new Teacher("Leonid", 33, "доцент");
+        //AccountController controller = new AccountController();
+        AccountController.paySalary(teacher1, 2000);
+        AccountController.paySalary(worker1, 1000);
+        Student studentVasya = new Student("Vasya Hitriy", 19);
+        // controller.paySalary(studentVasya, 1000);
+
+        System.out.println("----Homework4----");
+        Teacher teacher2 = new Teacher("Aleksei", 30, "Старший преподаватель");
+        Teacher teacher3 = new Teacher("Dmitry", 24, "Ассистент");
+        Teacher teacher4 = new Teacher("Elena", 59, "Профессор");
+        List<Teacher> teacherList = new ArrayList<>();
+        teacherList.add(teacher1);
+        teacherList.add(teacher2);
+        teacherList.add(teacher3);
+        teacherList.add(teacher4);
+        TeacherService teacherServiceList = new TeacherService();
+        teacherServiceList.setTeacherList(teacherList); // передаем в экземпляр сервиса список учителей на сортировку
+        teacherServiceList.printSortTeacherList(); // выполняем сортировку и вывод в консоль списка учителей
+        System.out.print("Учителя: ");
+        AccountController.averageAge(teacherList); // вывод среднего возраста учителей из списка
+        System.out.print("Студенты: ");
+        AccountController.averageAge(students2); // вывод среднего возраста студентов из списка
+        System.out.print("Работники: ");
+        AccountController.averageAge(employeeList); // вывод среднего возраста работников из списка
     }
+    
 }
