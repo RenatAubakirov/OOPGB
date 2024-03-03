@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 import Controller.ControllerClass;
 import Controller.Interfaces.iGetModel;
@@ -14,6 +15,10 @@ import View.ViewClass;
 public class App {
     public static void main(String[] args) throws Exception {
         List<Student> students = generatorStudents();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose language (Введите 'ru' для русского, 'en' for English): ");
+        String languageChoice = scanner.nextLine();
 
         iGetView view = new ViewClass();
         iGetModel model = new ModelClass(new ArrayList<>());
@@ -33,11 +38,13 @@ public class App {
         }
         
         ControllerClass controller = new ControllerClass(
-            new ArrayList<>(Arrays.asList(model, fileModel, hashModel)), "ua"
+            new ArrayList<>(Arrays.asList(model, fileModel, hashModel)), languageChoice
         );
         
         // controller.update();
         controller.run();
+
+        scanner.close();
     }
 
     /**
